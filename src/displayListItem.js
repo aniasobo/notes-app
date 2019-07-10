@@ -3,7 +3,6 @@
 (function(exports) {
   function ListItemFormatter() {
     this._i = 1;
-    this.NotesArray = [];
   }
 
   ListItemFormatter.prototype = {
@@ -18,6 +17,7 @@
     createAnchorElement: function(noteTitle) {
       var anchorElement = document.createElement('a');
       anchorElement.setAttribute("href", `#notes/${this._i}`);
+      anchorElement.setAttribute("id", `${this._i}`);
       anchorElement.innerHTML = noteTitle;
       var linebreak = document.createElement("br");
       anchorElement.append(linebreak);
@@ -26,10 +26,6 @@
 
     incrementCounter: function() {
       this._i++;
-    },
-
-    returnAllLinks: function(note) {
-      console.log("something");
     }
   };
 

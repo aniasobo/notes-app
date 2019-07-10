@@ -5,10 +5,22 @@
 
   console.log("I HAVE LOADED");
 
-   function TestController() {
-     this.submitButton = document.querySelector("#submit");
+   function TestController(ListItemFormatter) {
+     const submitButton = document.querySelector("#submit");
      this.noteForm = document.querySelector("#addnote");
      this.noteTextInput = document.querySelector("#notetext");
+     this.ListItemFormatter = ListItemFormatter;
+
+     this.addFormattedLink = function() {
+       const linkItemFormatter = this.ListItemFormatter;
+      submitButton.addEventListener("click", function(){
+        console.log("YOU HAVE CLICKED THE SUBMIT BUTTON")
+        var note = document.querySelector("#notetext").value;
+        // WARNING, BUGS AHEAD
+        var formattedNoteLink = linkItemFormatter.displayLinkBuilder(note);
+        document.querySelector("#fullnote").appendChild(formattedNoteLink);
+    });
+  };
 
      this.submitButtonAction = function() {
          this.submitButton.addEventListener("click", function(){
@@ -35,9 +47,22 @@
          });
     };
 
-    this.submitButtonAction();
+  //   this.testFunctionForButton = function() {
+  //     this.submitButton.addEventListener("click", function(){
+  //       var listItem = document.createElement('li');
+  //       var anchorElement = document.createElement('a');
+  //       anchorElement.setAttribute("href", "#1");
+  //       anchorElement.innerHTML = "Test link text bla";
+  //       listItem.appendChild(anchorElement);
+  //       document.querySelector("#fullnote").appendChild(listItem);
+  //   })
+  // };
+
+  //  this.submitButtonAction();
+ //     this.testFunctionForButton();
+        this.addFormattedLink();
   };
-  new TestController();
+  new TestController(new ListItemFormatter());
 });
 
 })();

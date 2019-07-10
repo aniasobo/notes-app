@@ -8,33 +8,21 @@
 
   ListItemFormatter.prototype = {
     displayLinkBuilder: function(noteTitle) {
-      var anchorElement = this.createAnchorElement(noteTitle);
-      var result = this.createListItem(anchorElement);
+      var result = this.createAnchorElement(noteTitle);
       this.incrementCounter();
-      //var result = this.appendAnchorElementToListItem(listItem, anchorElement);
+      console.log("I AM THE RESULT:")
+      console.log(result);
       return result;
-    },
-
-    createListItem: function(anchorElement) {
-      var listItem = document.createElement("li");
-      console.log(document);
-      console.log(listItem);
-      return listItem.innerHTML = anchorElement;
     },
 
     createAnchorElement: function(noteTitle) {
       var anchorElement = document.createElement('a');
       anchorElement.setAttribute("href", `#notes/${this._i}`);
       anchorElement.innerHTML = noteTitle;
+      var linebreak = document.createElement("br");
+      anchorElement.append(linebreak);
       return anchorElement;
     },
-
-    // appendAnchorElementToListItem: function(listItem, anchorElement) {
-    //   var result = listItem.appendChild(anchorElement);
-    //   console.log("LIST ITEM WITH ANCHOR ITEM APPENDED:")
-    //   console.log(result);
-    //   return result;
-    // },
 
     incrementCounter: function() {
       this._i++;

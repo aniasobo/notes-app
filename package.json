@@ -4,7 +4,7 @@
   "description": "note taking app",
   "main": "controller.js",
   "scripts": {
-    "test": "node spec/run-all-tests.js"
+    "test": "node spec/test-runner.js"
   },
   "repository": {
     "type": "git",

@@ -1,6 +1,6 @@
 "use strict";
 
-var test = require("/test/test");
+var test = require("./test");
 var Note = require("../src/create-note").Note; 
 
 test.describe("Note", function() {

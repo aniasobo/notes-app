@@ -4,7 +4,7 @@
   "description": "note taking app",
   "main": "controller.js",
   "scripts": {
-    "test": "node spec/run-all-tests.js"
+    "test": "node spec/test-runner.js"
   },
   "repository": {
     "type": "git",
@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/aniasobo/notes-app/issues"
   },
-  "homepage": "https://github.com/aniasobo/notes-app#readme"
+  "homepage": "https://github.com/aniasobo/notes-app#readme",
+  "dependencies": {
+    "jshint": "^2.10.2"
+  }
 }

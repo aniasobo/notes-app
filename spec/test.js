@@ -18,7 +18,7 @@
 
   function isTruthy(trueOrFalse) {
     if (!trueOrFalse) {
-    throw new Error("Error! " + trueOrFalse + " is not truthy 😡");
+    throw new Error("Error! " + trueOrFalse + " is not truthy 😡 ");
   }
   };
 
@@ -26,7 +26,7 @@
     var outcome = catchExceptionFrom(functionUnderTest);
 
     if (outcome === undefined) {
-    throw new Error("No exceptions here 🙂")
+    throw new Error("No exceptions here 🙂 ")
     }
 
     if (outcome.message !== expectedMessage) {
@@ -35,11 +35,11 @@
 };
 
   function testPassMessage(testCaseScenario) {
-    console.log("😎", testCaseScenario); 
+    console.log("😎 ", testCaseScenario); 
   };
 
   function testFailMessage(testCaseScenario, exception) {
-    console.log("️😒", testCaseScenario);
+    console.log("️😒 ", testCaseScenario);
     console.log(exception.name);
     console.log(exception.message);
     console.log(exception.stack);

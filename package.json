@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/aniasobo/notes-app/issues"
   },
-  "homepage": "https://github.com/aniasobo/notes-app#readme"
+  "homepage": "https://github.com/aniasobo/notes-app#readme",
+  "dependencies": {
+    "jshint": "^2.10.2"
+  }
 }
